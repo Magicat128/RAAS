@@ -16,12 +16,13 @@ def tokenize_llama_chat(
     model_output: str = None,
     system_prompt: str = None,
 ) -> List[int]:
-    input_content = ""
+    messages = []
     if system_prompt is not None:
-        input_content += B_SYS + system_prompt + E_SYS
-    input_content += f"{B_INST} {user_input.strip()} {E_INST}"
+        messages.append({"role": "system", "content": system_prompt.strip()})
+    messages.append({"role": "user", "content": user_input.strip()})
     if model_output is not None:
-        input_content += f" {model_output.strip()}"
+        messages.append({"role": "assistant", "content": model_output.strip()})
+    input_content = tokenizer.apply_chat_template(messages, tokenize=False)
     return tokenizer.encode(input_content)
 
 

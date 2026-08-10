@@ -25,20 +25,8 @@ def set_plotting_settings():
 
 
 def add_vector_from_position(matrix, vector, anchors, position_ids, from_pos=None):
-    '''
-    from_id = from_pos
-    if from_id is None:
-        from_id = position_ids.min().item() - 1
-
-    position_mask = position_ids >= from_id
-    position_mask = position_mask.unsqueeze(-1)
-
-    matrix += mask.float() * vector
-    '''
     pos_anchors, neg_anchors = anchors
     
-    #pos_scores = np.array([(t.matmul(matrix[0][-1], anc).item()) if anc.dim() > 0 else 0 for anc in pos_anchors])
-    #neg_scores = np.array([(t.matmul(matrix[0][-1], anc).item()) if anc.dim() > 0 else 0 for anc in neg_anchors])
     pos_scores = np.array([(F.cosine_similarity(matrix[0][-1], anc, dim=0).item()) if anc.dim() > 0 else 0 for anc in pos_anchors])
     neg_scores = np.array([(F.cosine_similarity(matrix[0][-1], anc, dim=0).item()) if anc.dim() > 0 else 0 for anc in neg_anchors])
     mask = np.array([1 if neg > pos else 0 for pos, neg in zip(pos_scores, neg_scores)])

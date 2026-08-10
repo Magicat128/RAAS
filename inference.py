@@ -131,7 +131,7 @@ def parse_arguments():
         "--model_path", type=str, default="deepseek-ai/DeepSeek-R1-Distill-Llama-8B", help="LLMs model path"
     )
     parser.add_argument(
-        "--classifier_path", type=str, default="../distill_bert/model", help="behavior classifier path"
+        "--classifier_path", type=str, default="./distill_bert/model", help="behavior classifier path"
     )
     parser.add_argument(
         "--method", type=str, default="steering", choices=["regular", "beam", "dola", "steering"], help="method"
