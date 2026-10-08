@@ -45,7 +45,7 @@ NORMALIZED_VECTORS_PATH = os.path.join(BASE_DIR, "normalized_vectors")
 ANALYSIS_PATH = os.path.join(BASE_DIR, "analysis")
 RESULTS_PATH = os.path.join(BASE_DIR, "results")
 GENERATE_DATA_PATH = os.path.join(BASE_DIR, "datasets", "generate")
-TEST_DATA_PATH = os.path.join(BASE_DIR, "datasets", "test")
+TEST_DATA_PATH = os.path.join(BASE_DIR, "distill_bert", "data")
 RAW_DATA_PATH = os.path.join(BASE_DIR, "datasets", "raw")
 ACTIVATIONS_PATH = os.path.join(BASE_DIR, "activations")
 FINETUNE_PATH = os.path.join(BASE_DIR, "finetuned_models")
@@ -69,7 +69,7 @@ def get_vector_path(behavior: str, layer, model_name_path: str, normalized=False
 def get_anchor_path(behavior: str, layer, prefix, model_name_path: str, normalized=False) -> str:
     return os.path.join(
         get_anchor_dir(behavior, prefix, normalized=normalized),
-        f"vec_layer_{make_tensor_save_suffix(layer, model_name_path)}.pt",
+        f"vec_layer_{make_tensor_save_suffix(layer, model_name_path, pos_neg)}.pt",
     )
 
 
@@ -86,7 +86,7 @@ def get_ab_data_path(behavior: str, test: bool = False) -> str:
 
 
 def get_open_ended_data_path(behavior: str) -> str:
-    return os.path.join(TEST_DATA_PATH, "reasoning", "test_dataset_open_ended.json")
+    return os.path.join(TEST_DATA_PATH, "steer_data.json")
 
 
 def get_truthful_qa_path() -> str:

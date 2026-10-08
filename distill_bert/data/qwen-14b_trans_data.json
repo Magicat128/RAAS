@@ -1,0 +1,204 @@
+{
+    "sim_correct": {
+        "initial_question": {
+            "initial_question": 0,
+            "problem_setup": 32.126483690144035,
+            "plan_generation": 0.873516309856159,
+            "fact_retrieval": 0,
+            "active_computation": 0,
+            "result_consolidation": 0,
+            "uncertainty_management": 0,
+            "self_checking": 0,
+            "final_answer_emission": 0
+        },
+        "problem_setup": {
+            "initial_question": 0,
+            "problem_setup": 21.93468569358507,
+            "plan_generation": 34.59255840025822,
+            "fact_retrieval": 26.670059210959803,
+            "active_computation": 1.1499321573948431,
+            "result_consolidation": 0.20238370644206635,
+            "uncertainty_management": 13.450380831360391,
+            "self_checking": 0,
+            "final_answer_emission": 0
+        },
+        "plan_generation": {
+            "initial_question": 0,
+            "problem_setup": 4.4846248588490605,
+            "plan_generation": 184.07004710900665,
+            "fact_retrieval": 213.6344374338574,
+            "active_computation": 116.94681625324182,
+            "result_consolidation": 12.82453654470183,
+            "uncertainty_management": 65.99051917938608,
+            "self_checking": 2.007781507569257,
+            "final_answer_emission": 0.041237113402061855
+        },
+        "fact_retrieval": {
+            "initial_question": 0,
+            "problem_setup": 7.105093064173775,
+            "plan_generation": 142.97389780211233,
+            "fact_retrieval": 505.59888315069594,
+            "active_computation": 224.78427577264569,
+            "result_consolidation": 67.89028766291506,
+            "uncertainty_management": 120.54072993412485,
+            "self_checking": 18.440165946615785,
+            "final_answer_emission": 4.666666666666638
+        },
+        "active_computation": {
+            "initial_question": 0,
+            "problem_setup": 0.5934317815444181,
+            "plan_generation": 63.21308775212343,
+            "fact_retrieval": 131.5119969509301,
+            "active_computation": 679.8976903616799,
+            "result_consolidation": 150.98281708118176,
+            "uncertainty_management": 135.16584131456227,
+            "self_checking": 29.529871600048374,
+            "final_answer_emission": 1.1052631578947394
+        },
+        "result_consolidation": {
+            "initial_question": 0,
+            "problem_setup": 4.067425092872528,
+            "plan_generation": 58.182591866608995,
+            "fact_retrieval": 105.34311362107312,
+            "active_computation": 81.06354665079894,
+            "result_consolidation": 232.02100361713272,
+            "uncertainty_management": 136.3848430336693,
+            "self_checking": 18.823513532811347,
+            "final_answer_emission": 5.113962585034029
+        },
+        "uncertainty_management": {
+            "initial_question": 0,
+            "problem_setup": 8.582603819662488,
+            "plan_generation": 167.04916605533737,
+            "fact_retrieval": 184.83146259983437,
+            "active_computation": 67.34116441202734,
+            "result_consolidation": 37.2284633191001,
+            "uncertainty_management": 235.1924452685481,
+            "self_checking": 31.77469452550036,
+            "final_answer_emission": 1.0
+        },
+        "self_checking": {
+            "initial_question": 0,
+            "problem_setup": 1.1721851802264174,
+            "plan_generation": 8.650321963610992,
+            "fact_retrieval": 36.085247813614295,
+            "active_computation": 28.596420142249393,
+            "result_consolidation": 23.600573447252287,
+            "uncertainty_management": 23.103941893463617,
+            "self_checking": 48.19130955958253,
+            "final_answer_emission": 2.6000000000000005
+        },
+        "final_answer_emission": {
+            "initial_question": 0,
+            "problem_setup": 0,
+            "plan_generation": 0.325,
+            "fact_retrieval": 1.11,
+            "active_computation": 0.30142857142857143,
+            "result_consolidation": 0,
+            "uncertainty_management": 20.703571428571415,
+            "self_checking": 0.435,
+            "final_answer_emission": 0.125
+        }
+    },
+    "sim_not_correct": {
+        "initial_question": {
+            "initial_question": 0,
+            "problem_setup": 31.176308408749367,
+            "plan_generation": 1.622751520745523,
+            "fact_retrieval": 0.11398354876615746,
+            "active_computation": 0.043478260869565216,
+            "result_consolidation": 0,
+            "uncertainty_management": 0.043478260869565216,
+            "self_checking": 0,
+            "final_answer_emission": 0
+        },
+        "problem_setup": {
+            "initial_question": 0,
+            "problem_setup": 20.04956374441588,
+            "plan_generation": 36.860657569679965,
+            "fact_retrieval": 20.930582300896173,
+            "active_computation": 2.7923950542670832,
+            "result_consolidation": 0.4911967418546366,
+            "uncertainty_management": 16.83015004343235,
+            "self_checking": 0.045454545454545456,
+            "final_answer_emission": 0
+        },
+        "plan_generation": {
+            "initial_question": 0,
+            "problem_setup": 9.85508821929045,
+            "plan_generation": 176.72519499758113,
+            "fact_retrieval": 212.53685541585597,
+            "active_computation": 121.67279356623237,
+            "result_consolidation": 16.180370799081953,
+            "uncertainty_management": 59.61578144002122,
+            "self_checking": 3.413915561951258,
+            "final_answer_emission": 0
+        },
+        "fact_retrieval": {
+            "initial_question": 0,
+            "problem_setup": 6.4674240311835485,
+            "plan_generation": 161.73819681179563,
+            "fact_retrieval": 492.3552626131363,
+            "active_computation": 232.62951717125708,
+            "result_consolidation": 74.87318103202307,
+            "uncertainty_management": 96.87811674225186,
+            "self_checking": 22.480778541654853,
+            "final_answer_emission": 4.577523056653487
+        },
+        "active_computation": {
+            "initial_question": 0,
+            "problem_setup": 2.5411193409211768,
+            "plan_generation": 61.506875753867945,
+            "fact_retrieval": 139.59939068489132,
+            "active_computation": 681.7857956605694,
+            "result_consolidation": 148.92644393018486,
+            "uncertainty_management": 130.76542720125698,
+            "self_checking": 25.864743346591816,
+            "final_answer_emission": 1.0102040816326525
+        },
+        "result_consolidation": {
+            "initial_question": 0,
+            "problem_setup": 2.160461876440102,
+            "plan_generation": 61.28565694740037,
+            "fact_retrieval": 92.01120163939746,
+            "active_computation": 86.18730542235464,
+            "result_consolidation": 252.2044304034518,
+            "uncertainty_management": 117.88383806429859,
+            "self_checking": 20.1891295922578,
+            "final_answer_emission": 9.077976054393845
+        },
+        "uncertainty_management": {
+            "initial_question": 0,
+            "problem_setup": 7.435072822855841,
+            "plan_generation": 159.56465969387867,
+            "fact_retrieval": 207.6330360610933,
+            "active_computation": 64.89764046085247,
+            "result_consolidation": 48.43544741155127,
+            "uncertainty_management": 219.92298364643696,
+            "self_checking": 25.111159903337644,
+            "final_answer_emission": 0
+        },
+        "self_checking": {
+            "initial_question": 0,
+            "problem_setup": 0.5547985347985348,
+            "plan_generation": 7.399522215856736,
+            "fact_retrieval": 28.471952747271008,
+            "active_computation": 28.30489755155034,
+            "result_consolidation": 22.608813899424526,
+            "uncertainty_management": 28.585785370062883,
+            "self_checking": 52.82523774555259,
+            "final_answer_emission": 3.2489919354838728
+        },
+        "final_answer_emission": {
+            "initial_question": 0,
+            "problem_setup": 0,
+            "plan_generation": 1.5852425671191326,
+            "fact_retrieval": 3.250484896553525,
+            "active_computation": 0.4242543171114603,
+            "result_consolidation": 1.113743687999472,
+            "uncertainty_management": 16.069545770211207,
+            "self_checking": 0.42235927246892174,
+            "final_answer_emission": 0.1343694885361552
+        }
+    }
+}

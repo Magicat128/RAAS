@@ -125,10 +125,9 @@ class BlockOutputWrapper(t.nn.Module):
 class LlamaWrapper:
     def __init__(
         self,
-        size: str = "7b",
         use_chat: bool = True,
         model_path: Optional[str] = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
-        classifier_path: Optional[str] = "../distill_bert/model",
+        classifier_path: Optional[str] = "distill_bert/model",
         insert_layer: Optional[int] = 23,
         override_model_weights_path: Optional[str] = None,
     ):
@@ -148,9 +147,7 @@ class LlamaWrapper:
         self.model.generation_config.pad_token_id = self.tokenizer.pad_token_id
 
         if override_model_weights_path is not None:
-            self.model.load_state_dict(t.load(override_model_weights_path))
-        if size != "7b":
-            self.model = self.model.half()
+            self.model.load_state_dict(t.load(override_model_weights_path)
         self.model = self.model.to(self.device)
 
         self.vector_map = {}
@@ -395,8 +392,7 @@ if __name__ == "__main__":
     x = "Solve this math problem step by step. You MUST put your final answer in \\boxed{}. Problem: " + prompt + "\n Solution:\n<think>\n"
 
     steer = True
-    model = LlamaWrapper(model_path="/data/zhangyufeng/LLM_models/DeepSeek-R1-Distill-Qwen-7B")
-    #"deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
+    model = LlamaWrapper(model_path="deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
     model.set_save_internal_decodings(False)
     input_ids = model.tokenizer(prompt, return_tensors="pt").input_ids.to(model.device)
     generate_input = {

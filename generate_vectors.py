@@ -1,8 +1,5 @@
 """
 Generates steering vectors for each layer of the model by averaging the activations of all the positive and negative examples.
-
-Example usage:
-python generate_vectors.py --layers $(seq 0 31) --save_activations --use_base_model --model_size 7b --behaviors sycophancy
 """
 
 import json
@@ -35,7 +32,7 @@ class ComparisonDataset(Dataset):
             data = json.load(f)
         self.data = []
         for item in data:
-            if behavior == "label_anchor" or item["function_tags"] == behavior:
+            if item["function_tags"] == behavior:
                 self.data.append(item)
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_name_path
@@ -78,10 +75,7 @@ def generate_save_vectors_for_behavior(
     behavior: List[str],
     model: LlamaWrapper,
 ):
-    if behavior == "label_anchor":
-        data_path = get_ab_data_path(behavior)
-    else:
-        data_path = get_open_ended_data_path(behavior)
+    data_path = get_open_ended_data_path(behavior)
     if not os.path.exists(get_vector_dir(behavior)):
         os.makedirs(get_vector_dir(behavior))
     if save_activations and not os.path.exists(get_activations_dir(behavior)):
@@ -137,18 +131,16 @@ def generate_save_vectors(
     layers: List[int],
     save_activations: bool,
     use_base_model: bool,
-    model_size: str,
     behaviors: List[str],
 ):
     """
     layers: list of layers to generate vectors for
     save_activations: if True, save the activations for each layer
     use_base_model: Whether to use the base model instead of the chat model
-    model_size: size of the model to use, either "7b" or "13b"
     behaviors: behaviors to generate vectors for
     """
     model = LlamaWrapper(
-        size=model_size, use_chat=not use_base_model, model_type="llama"
+        use_chat=not use_base_model, model_type="llama"
     )
     for behavior in behaviors:
         t.cuda.empty_cache()
@@ -162,7 +154,6 @@ if __name__ == "__main__":
     parser.add_argument("--layers", nargs="+", type=int, default=list(range(32)))
     parser.add_argument("--save_activations", action="store_true", default=False)
     parser.add_argument("--use_base_model", action="store_true", default=False)
-    parser.add_argument("--model_size", type=str, choices=["7b", "13b"], default="7b")
     parser.add_argument("--behaviors", nargs="+", type=str, default=ALL_BEHAVIORS)
 
     args = parser.parse_args()
@@ -170,6 +161,5 @@ if __name__ == "__main__":
         args.layers,
         args.save_activations,
         args.use_base_model,
-        args.model_size,
         args.behaviors
     )
