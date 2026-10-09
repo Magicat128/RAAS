@@ -147,7 +147,7 @@ class LlamaWrapper:
         self.model.generation_config.pad_token_id = self.tokenizer.pad_token_id
 
         if override_model_weights_path is not None:
-            self.model.load_state_dict(t.load(override_model_weights_path)
+            self.model.load_state_dict(t.load(override_model_weights_path))
         self.model = self.model.to(self.device)
 
         self.vector_map = {}
