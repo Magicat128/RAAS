@@ -2,6 +2,8 @@
 
 [ICLR 2026] Official Implementation for "Characterizing and Mitigating Reasoning Drift in Large Language Models"
 
+Some parts of the code are based on CAA. We thank the authors for their valuable work.
+
 ## 1. Install
 
 ```bash
